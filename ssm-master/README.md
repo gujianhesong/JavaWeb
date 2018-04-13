@@ -560,7 +560,7 @@ package com.soecode.lyf.dao;
 
 import java.util.List;
 
-import com.soecode.lyf.entity.Book;
+import Book;
 
 public interface BookDao {
 
@@ -598,7 +598,7 @@ package com.soecode.lyf.dao;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.soecode.lyf.entity.Appointment;
+import Appointment;
 
 public interface AppointmentDao {
 
@@ -635,7 +635,7 @@ public interface AppointmentDao {
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.soecode.lyf.dao.BookDao">
+<mapper namespace="BookDao">
 	<!-- 目的：为dao接口方法提供sql语句配置 -->
 	<select id="queryById" resultType="Book" parameterType="long">
 		<!-- 具体的sql -->
@@ -677,7 +677,7 @@ public interface AppointmentDao {
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.soecode.lyf.dao.AppointmentDao">
+<mapper namespace="AppointmentDao">
 	<insert id="insertAppointment">
 		<!-- ignore 主键冲突，报错 -->
 		INSERT ignore INTO appointment (book_id, student_id)
@@ -743,8 +743,8 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.soecode.lyf.BaseTest;
-import com.soecode.lyf.entity.Book;
+import BaseTest;
+import Book;
 
 public class BookDaoTest extends BaseTest {
 
@@ -794,8 +794,8 @@ package com.soecode.lyf.dao;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.soecode.lyf.BaseTest;
-import com.soecode.lyf.entity.Appointment;
+import BaseTest;
+import Appointment;
 
 public class AppointmentDaoTest extends BaseTest {
 
@@ -893,8 +893,8 @@ public enum AppointStateEnum {
 ```java
 package com.soecode.lyf.dto;
 
-import com.soecode.lyf.entity.Appointment;
-import com.soecode.lyf.enums.AppointStateEnum;
+import Appointment;
+import AppointStateEnum;
 
 /**
  * 封装预约执行后结果
@@ -1018,8 +1018,8 @@ package com.soecode.lyf.service;
 
 import java.util.List;
 
-import com.soecode.lyf.dto.AppointExecution;
-import com.soecode.lyf.entity.Book;
+import AppointExecution;
+import Book;
 
 /**
  * 业务接口：站在"使用者"角度设计接口 三个方面：方法定义粒度，参数，返回类型（return 类型/异常）
@@ -1067,16 +1067,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.soecode.lyf.dao.AppointmentDao;
-import com.soecode.lyf.dao.BookDao;
-import com.soecode.lyf.dto.AppointExecution;
-import com.soecode.lyf.entity.Appointment;
-import com.soecode.lyf.entity.Book;
-import com.soecode.lyf.enums.AppointStateEnum;
-import com.soecode.lyf.exception.AppointException;
-import com.soecode.lyf.exception.NoNumberException;
-import com.soecode.lyf.exception.RepeatAppointException;
-import com.soecode.lyf.service.BookService;
+import AppointmentDao;
+import BookDao;
+import AppointExecution;
+import Appointment;
+import Book;
+import AppointStateEnum;
+import AppointException;
+import NoNumberException;
+import RepeatAppointException;
+import BookService;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -1156,9 +1156,9 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.soecode.lyf.BaseTest;
-import com.soecode.lyf.dto.AppointExecution;
-import com.soecode.lyf.service.BookService;
+import BaseTest;
+import AppointExecution;
+import BookService;
 
 public class BookServiceImplTest extends BaseTest {
 
@@ -1244,13 +1244,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.soecode.lyf.dto.AppointExecution;
-import com.soecode.lyf.dto.Result;
-import com.soecode.lyf.entity.Book;
-import com.soecode.lyf.enums.AppointStateEnum;
-import com.soecode.lyf.exception.NoNumberException;
-import com.soecode.lyf.exception.RepeatAppointException;
-import com.soecode.lyf.service.BookService;
+import AppointExecution;
+import Result;
+import Book;
+import AppointStateEnum;
+import NoNumberException;
+import RepeatAppointException;
+import BookService;
 
 @Controller
 @RequestMapping("/book") // url:/模块/资源/{id}/细分 /seckill/list

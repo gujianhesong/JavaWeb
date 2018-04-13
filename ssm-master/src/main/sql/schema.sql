@@ -1,24 +1,15 @@
--- 创建图书表
-CREATE TABLE `book` (
-  `book_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '图书ID',
-  `name` varchar(100) NOT NULL COMMENT '图书名称',
-  `number` int(11) NOT NULL COMMENT '馆藏数量',
-  PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='图书表';
+-- 创建反馈表
+CREATE TABLE `feedback` (
+  `_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `appPackage` varchar(100) NOT NULL COMMENT 'App包名',
+  `content` TEXT NOT NULL COMMENT '反馈内容',
+  `createTime` LONG NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='反馈表';
 
--- 初始化图书数据
-INSERT INTO `book` (`book_id`, `name`, `number`)
+-- 初始化反馈数据
+INSERT INTO `feedback` (`appPackage`, `content`, `createTime`)
 VALUES
-	(1000, 'Java程序设计', 10),
-	(1001, '数据结构', 10),
-	(1002, '设计模式', 10),
-	(1003, '编译原理', 10);
-
--- 创建预约图书表
-CREATE TABLE `appointment` (
-  `book_id` bigint(20) NOT NULL COMMENT '图书ID',
-  `student_id` bigint(20) NOT NULL COMMENT '学号',
-  `appoint_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '预约时间' ,
-  PRIMARY KEY (`book_id`, `student_id`),
-  INDEX `idx_appoint_time` (`appoint_time`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='预约图书表';
+	('com.pinery.reader', '还有很多不足', 10),
+	('com.pinery.eye', '好用，喜欢', 10),
+	('com.pinery.reader', '还好', 10);
