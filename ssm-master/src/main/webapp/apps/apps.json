@@ -1,0 +1,42 @@
+{
+  "apps" : [
+    {
+      "name" : {
+        "en" : "Easy Reader",
+        "zh" : "随心阅"
+      },
+      "versionCode" : 21,
+      "versionName" : "1.1.1",
+      "pkgName" : "com.pinery.reader",
+      "url" : "https://play.google.com/store/apps/details?id=com.pinery.reader",
+      "iconUrl" : "http://104.225.237.137:8080/ssm/images/reader.webp",
+      "description" : {
+        "en" : "Read here and funny with it.",
+        "zh" : "随心所阅，乐在其中。"
+      },
+      "content" : {
+        "en" : "EasyReader is a reader client with float function. It is divided into news, selected reading, custom browsing, web site, four functions. News features include headlines, social, technology and other types of news. A selection of reading functions also provides various types of reading. Custom browsing feature allows users to add their favorite reading url. And the website is full, provide commonly used website information for the user to browse. It can be suspended in other applications. Users can read and browse the information they want while chatting, which is convenient and easy to use.",
+        "zh" : "随心阅是一款可以悬浮显示的阅读类软件。它分为新闻，精选阅读，自定义浏览，网址大全，四大功能。新闻功能提供包括头条，社会，科技等等类型的新闻内容。精选阅读功能同样提供各种类型的阅读。自定义浏览功能，用户可以添加自己喜欢的阅读网址。而网址大全，则提供常用的网址信息供用户浏览。随心阅的特点是可以悬浮在其他应用上显示，用户可以一边聊天一边阅读浏览想要的信息，方便易用。"
+      }
+    },
+    {
+      "name" : {
+        "en" : "Eye protect - bluelight filter",
+        "zh" : "熊猫护眼-滤蓝光"
+      },
+      "versionCode" : 1,
+      "versionName" : "1.0",
+      "pkgName" : "com.pinery.eye",
+      "url" : "https://play.google.com/store/apps/details?id=com.pinery.eye",
+      "iconUrl" : "http://104.225.237.137:8080/ssm/images/panda_eye.png",
+      "description" : {
+        "en" : "Protect your eyes with blue light filter",
+        "zh" : "熊猫护眼，爱护眼睛，拒绝熊猫眼。"
+      },
+      "content" : {
+        "en" : "Panda Eye protect is a very convenient and practical application, the default contain filter blue light, indoor mode, night mode, outdoor mode, etc., and can also customize the way you want, simply click you can switch oh, go and try it on.",
+        "zh" : "熊猫护眼是一款非常方便实用的护眼应用，默认包含滤蓝光，室内模式，夜间模式，室外模式等，而且还可以自定义您想要的模式，只需轻轻点一下就可以切换哦，快去试试吧。"
+      }
+    }
+  ]
+}

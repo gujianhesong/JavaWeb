@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "pkgName": "com.pinery.reader",
+      "showAdmob": "false"
+    },
+    {
+      "pkgName": "com.pinery.eye",
+      "showAdmob": "true"
+    }
+  ]
+}
